@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Switch, BrowserRouter } from "react-router-dom";
+import { useMediaQuery } from "react-responsive";
+import { Aside } from './components/Aside/Aside';
+import "./App.scss";
 
-function App() {
+const App = () => {
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <Aside></Aside>
+      </BrowserRouter>
     </div>
-  );
+  )
 }
 
 export default App;
