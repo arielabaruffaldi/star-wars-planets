@@ -1,19 +1,8 @@
 import styles from "./Aside.module.scss";
-import { BiPlanet, BiHeart } from "react-icons/bi";
 import Option from "../Option/Option";
+import { menu } from '../../utils/mockData';
 
-const optionsList = [
-    {
-        name: "Planetas",
-        href: "/",
-        Icon: <BiPlanet size={"2rem"} color={"#01A3FF"} />,
-    },
-    {
-        name: "Favoritos",
-        href: "/favoritos",
-        Icon: <BiHeart size={"2rem"} color={"#01A3FF"} />,
-    },
-];
+
 
 export const Aside = () => {
     return (
@@ -23,7 +12,7 @@ export const Aside = () => {
             </div>
             <nav>
                 <ul className={styles.OptionsContainer}>
-                    {optionsList.map((option, value) =>
+                    {menu.map((option, value) =>
                         <Option
                             key={value}
                             name={option.name}
